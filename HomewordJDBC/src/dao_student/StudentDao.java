@@ -12,7 +12,7 @@ import dto_student.Student;
 public class StudentDao implements IDatabase{
 	public static Connection connectionhandler() throws Exception{
 		Class.forName("org.postgresql.Driver");
-		String url="jdbc:postgres://localhsot:5432/dbstudent";
+		String url="jdbc:postgresql://localhost:5432/dbstudent";
 		String user="postgres";
 		String password="123";
 		return DriverManager.getConnection(url,user,password);
@@ -27,7 +27,7 @@ public class StudentDao implements IDatabase{
 		
 		try{
 			con = connectionhandler();
-			String sql="insert into tbstudent(?,?,?,?)";
+			String sql="insert into tbstudent values(?,?,?,?,?)";
 			pst = con.prepareStatement(sql);
 			pst.setInt(1,stu.getId());
 			pst.setString(2,stu.getName());

@@ -4,8 +4,13 @@ import controler.Controler;
 
 public class Main {
 
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
-		Controler.myControler();
+		try{
+			new Controler().myControler();
+		}catch(Exception ex){
+			System.out.println(ex.getMessage());
+		}
 	}
 
 }

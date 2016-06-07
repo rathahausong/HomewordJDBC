@@ -69,11 +69,15 @@ public class Student {
 		this.score = score;
 	}
 	
-	public static String[] getFiled(){
+	public static String[] getFields(){
 		return new String[]{FILED_ID,FILED_NAME,FILED_GENDER,FILED_DOB,FILED_SCORE}; 
 	}
 	public String info(){
 		return toString();
+	}
+	
+	public String[] getData(){
+		return new String[]{String.valueOf(this.id),this.name,this.gender,String.valueOf(this.score)};
 	}
 	@Override
 	public final String toString(){
